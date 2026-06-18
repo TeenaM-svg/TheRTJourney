@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTJourney - Chapter 1: Discovery</title>
+  <title>TheRTJourney</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body style="overflow-x: hidden;">
@@ -25,7 +25,7 @@
   <div id="heart-7" class="hidden-heart" style="bottom: 15%; right: 10%; font-size: 1.25rem;" title="Found me! 💖">❤️</div>
 
   <!-- Navigation Header (Simple styled header for landing) -->
-  <header class="sticky-nav" style="background: transparent; border: none; height: 6rem;">
+  <header class="sticky-nav index-nav" style="height: 6rem;">
     <div class="nav-content max-w-6xl" style="padding-top: 1rem; justify-content: center;">
       <div class="nav-title-group" style="text-align: center;">
         <h1 style="color: var(--primary); text-shadow: none; font-size: 2rem;">RTJourney</h1>
@@ -43,7 +43,7 @@
       <h2>A Little Adventure</h2>
       <p style="margin-bottom: 0.5rem;">Before the story begins... <span id="heart-1" class="hidden-heart" style="position: relative; display: inline-block; animation: none; font-size: 1.1rem; cursor: pointer; vertical-align: middle;" title="Found me! 💖">❤️</span></p>
       <p style="font-size: 0.8rem; max-width: 440px; margin: 0 auto; line-height: 1.4;">
-        Find the <strong>7 hidden hearts</strong> throughout this page to unlock a special reward, or explore the interactive <strong>Memory Jar</strong> and <strong>Floating Envelopes</strong> to reveal sweet memories.
+        Find the <strong>7 hidden hearts</strong>  throughout this page to continue our journey, or explore the interactive <strong>Memory Jar</strong>  and <strong>Floating Envelopes</strong> to reveal sweet messages.
       </p>
     </div>
 
@@ -78,8 +78,8 @@
     </div>
 
     <!-- Continue Buttons -->
-    <div style="z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 320px;">
-      <a href="gateway.html" id="btn-continue-journey" class="btn-enter-story" style="text-decoration: none; display: block; text-align: center;">
+    <div class="continue-panel">
+      <a href="#" id="btn-continue-journey" class="btn-enter-story disabled" aria-disabled="true" style="text-decoration: none; display: block; text-align: center;">
         Continue Our Journey →
       </a>
     </div>

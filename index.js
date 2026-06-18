@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const heartThoughts = {
     'heart-1': "From Accra to Kumasi, distance means nothing when you mean everything.",
-    'heart-2': "I love your beautiful smile, it makes my days brighter.",
-    'heart-3': "Thank you for being my peace in a chaotic world.",
+    'heart-2': "Laugh often, it makes my day brighter.",
+    'heart-3': "Your one and only Siano girl.",
     'heart-4': "Every phone call we share leaves me counting down the hours to the next one.",
-    'heart-5': "You're my favorite person to laugh with.",
-    'heart-6': "My heart beats for you, today and forever.",
+    'heart-5': "Your baby awaits your arrival in Kumasi.",
+    'heart-6': "My heart beats for you, right now.",
     'heart-7': "You found the secret letter hidden in my heart! You make me complete."
   };
 
@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Unlocked Special Reward
         if (count === 7) {
+          canContinue = true;
+          continueBtn.setAttribute('href', 'gateway.html');
+          continueBtn.setAttribute('aria-disabled', 'false');
+          continueBtn.classList.remove('disabled');
           setTimeout(() => {
             unlockRewardCard.style.display = 'block';
             unlockRewardCard.scrollIntoView({ behavior: 'smooth' });
@@ -142,12 +146,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Spawn envelope every 4 seconds
   const spawnerInterval = setInterval(spawnEnvelope, 4000);
 
+  let canContinue = false;
+
   // Smooth page transition helper
   if (continueBtn) {
     continueBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      if (!canContinue) {
+        console.error('403 Forbidden: complete all hearts before continuing.');
+        showScrollNote('Hold on!', 'Find all 7 love emojis before continuing.');
+        return;
+      }
+
       clearInterval(spawnerInterval);
-      
       overlay.classList.remove('inactive'); // Show transition overlay
       
       setTimeout(() => {

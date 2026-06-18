@@ -3,54 +3,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Next Chapters — RTJourney</title>
+  <title>TheRTJourney</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    body.story-page {
+      background: var(rgba(212, 116, 95, 0.08));
+      overflow-x: hidden;
+    }
+
+    header.sticky-nav { display: none !important; }
+
+    .next-main {
+      background: var( rgba(212, 116, 95, 0.08));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem 4rem;
+      gap: 2.5rem;
+    }
+
+    /* ── Big floating blob ── */
+    .blob-wrap {
+      width: min(780px, 94vw);
+      background: #fff;
+      border-radius: 48px;
+      border: 1.5px solid rgba(212,116,95,0.2);
+      box-shadow: 0 32px 80px rgba(212,116,95,0.13), 0 8px 24px rgba(0,0,0,0.07);
+      padding: 2rem 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: blobFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes blobFloat {
+      0%, 100% { transform: translateY(0px);   box-shadow: 0 32px 80px rgba(212,116,95,0.13), 0 8px 24px rgba(0,0,0,0.07); }
+      50%       { transform: translateY(-14px); box-shadow: 0 46px 90px rgba(212,116,95,0.17), 0 12px 32px rgba(0,0,0,0.09); }
+    }
+
+    /* ── Nav inside blob ── */
+    .blob-nav {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid rgba(212,116,95,0.15);
+      margin-bottom: 1.8rem;
+    }
+    .blob-nav h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--foreground);
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    /* ── Single-row flex: oval left, triangle right (nudged down) ── */
+    .tri-grid {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    /* ── OVAL ── */
+    .next-panel-chapters {
+      flex: 0 0 auto;
+      width: 260px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(212,116,95,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: background 0.25s ease, transform 0.3s ease;
+      margin-top: 0;
+    }
+    .next-panel-chapters:hover { background: rgba(212,116,95,0.14); transform: scale(1.02); }
+
+    /* ── TRIANGLE (pointing down) — nudged down to sit diagonally below oval ── */
+    .next-panel-one-last {
+      flex: 0 0 auto;
+      width: 280px;
+      height: 260px;
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      background: rgba(212,116,95,0.08);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+      transition: background 0.25s ease, transform 0.3s ease;
+      margin-top: 60px; /* diagonal offset — sits lower than oval */
+    }
+    .next-panel-one-last:hover { background: rgba(212,116,95,0.14); }
+
+    /* ── Inner: oval — full width minus oval curve inset ── */
+    .next-panel-chapters .next-panel-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+      width: 78%;
+    }
+
+    /* ── Inner: triangle — sits in wide top band ── */
+    .next-panel-one-last .next-panel-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+      width: 72%;
+      padding-top: 1rem;
+    }
+
+    /* ── Typography: oval ── */
+    .next-panel-chapters h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var( rgba(212, 116, 95, 0.08));
+      line-height: 1.2;
+      margin: 0 0 0.1rem;
+    }
+    .next-panel-chapters p {
+      font-size: 0.82rem;
+      color: var(--muted-foreground);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .panel-tagline {
+      font-style: italic;
+      font-size: 0.76rem !important;
+      color: rgba(122,110,106,0.7) !important;
+    }
+
+    .chapter-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.1rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      width: 100%;
+    }
+    .chapter-list li {
+      font-size: 0.78rem;
+      color: var(--muted-foreground);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.3rem;
+      text-align: center;
+    }
+    .chapter-list li .ch-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ── Typography: triangle ── */
+    .next-panel-one-last h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var( rgba(212, 116, 95, 0.08));
+      line-height: 1.2;
+      margin: 0 0 0.15rem;
+    }
+    .next-panel-one-last p {
+      font-size: 0.9rem;
+      color: var( rgba(212, 116, 95, 0.08));
+      line-height: 1.6;
+      margin: 0;
+    }
+    .panel-signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.88rem !important;
+      font-weight: 600;
+      color: var(--primary) !important;
+      margin-top: 0.2rem;
+    }
+
+    /* ── Back button ── */
+    .next-actions { position: relative; z-index: 2; }
+    .btn-proposal {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.65rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 9999px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 560px) {
+      .blob-wrap { padding: 1.5rem 1.2rem 2rem; border-radius: 32px; }
+      .tri-grid { flex-direction: column; align-items: center; gap: 2rem; }
+      .next-panel-chapters { width: 240px; height: 280px; margin-top: 0; }
+      .next-panel-one-last { width: 250px; height: 230px; margin-top: 0; }
+    }
+  </style>
 </head>
 <body class="story-page">
-  <header class="sticky-nav">
-    <div class="nav-bg-wrapper">
-      <div class="nav-content max-w-6xl">
-        <div class="nav-title-group">
-          <h1>RTJourney</h1>
-          <p>Our Next Chapters</p>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <main class="next-main">
-    <div class="next-card max-w-6xl">
-      <div class="next-section-header">
-        <h2>Our Next <span class="text-gradient">Chapters</span></h2>
-        <p>Tiny promises, big dreams — the roadmap we'll write together.</p>
+
+    <div class="blob-wrap">
+
+      <div class="blob-nav">
+        <h1>Chapter Four: <span class="text-gradient">RT Future</span></h1>
+
       </div>
 
-      <div class="next-columns">
-        <section class="next-section" id="our-next-chapters">
-          <h3>Our Next Chapters</h3>
-          <p>Chapter 1: One month celebration — make time for a proper date.
-          <br>Chapter 2: First adventure — plan a weekend getaway and collect new memories.
-          <br>Chapter 3: Building rituals — nightly calls, weekend plans, and shared playlists.
-          </p>
+      <div class="tri-grid">
+
+        <!-- Oval: Our Next Chapters -->
+        <section class="next-panel-chapters">
+          <div class="next-panel-inner">
+            <h2>Our Next Chapters</h2>
+            <p class="panel-tagline">Tiny promises &amp; big dreams.</p>
+            <ul class="chapter-list">
+              <li><span class="ch-num">I</span><span>One Month Celebration: Make Time For a Proper Date.</span></li>
+              <li><span class="ch-num">II</span><span>First Adventure: A Weekend Getaway.</span></li>
+              <li><span class="ch-num">III</span><span>Building Habits: Playlists, Business Plans and Prayers.</span></li>
+            </ul>
+          </div>
         </section>
 
-        <section class="next-section" id="one-last-thing">
-          <h3>One Last Thing</h3>
-          <p>We promise to keep choosing each other. To listen, to laugh, and to grow together. One last thing: never stop saying "I love you".</p>
-          <p style="margin-top:1rem;">— Ray & Teena ❤️</p>
+        <!-- Triangle: One Last Thing -->
+        <section class="next-panel-one-last" id="one-last-thing-banner">
+          <div class="next-panel-inner">
+          <h2>One Last Thing...</h2>
+          <p>We promise to keep choosing us. To listen, laugh and grow together.<br>
+         I LOVE YOU.</p>
+          <p class="panel-signature">~Teena ❤️</p>
+          </div>
         </section>
-      </div>
 
-      <div style="text-align:center; margin-top:1.5rem;">
-        <a href="story.html" class="btn-proposal">Back to Story</a>
       </div>
     </div>
+
+    <div class="next-actions">
+      <a href="story.html" class="btn-proposal">← Back to Story</a>
+    </div>
+
   </main>
 
   <footer class="site-footer">
     <div class="max-w-6xl">
       <div class="footer-bottom">
-        <p>© 2026 RTJourney. Created with love by Ray & Teena.</p>
+        <p>© 2026 RTJourney. Created with love by Ray &amp; Teena.</p>
       </div>
     </div>
   </footer>

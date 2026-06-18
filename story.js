@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textBox.innerHTML = `
       <div class="balloon-text-box">
         <h2>Happy 2-Week Anniversary</h2>
-        <p>Ray & Teena</p>
+    
       </div>
     `;
     container.appendChild(textBox);
@@ -271,11 +271,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openProposalModal = () => {
     const content = `
       <div class="modal-img-area">
-        <img src="public/couple-journey.jpeg" alt="Will you be my girlfriend?">
+        <img src="public/couple-journey.jpg" alt="Will you be my girlfriend?">
       </div>
       <div class="modal-body">
-        <h3>She's Said YES! ❤️</h3>
-        <p class="modal-subtitle">June 16th - The day that changed everything</p>
+        <h3>Will You Be My Girlfriend?
+        <h4>I Said YES! ❤️ </h4></h3>
+        <p class="modal-subtitle">June 16th: The day that changed everything</p>
         <button id="modal-close-btn" class="btn-modal-close">Close</button>
       </div>
     `;
@@ -285,9 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openSecretModal = (personName) => {
     let message = '';
     if (personName === 'Ray') {
-      message = 'funny, beautiful inside out, thoughtful, and easy to talk to. You are the kind of person who makes every conversation feel effortless. From the moment we met, something just felt different. I genuinely enjoy getting to know you, hearing your thoughts, and sharing little moments throughout the day. Your smile always seems to make things better, and somehow you\'ve become that one person I look forward to talking to more than I\'d like to admit. These past two weeks have been special, and I\'m excited to see where this journey takes us.';
+      message = 'funny, visionary, beautiful inside out, thoughtful, and easy to talk to. You are the kind of person who makes every conversation feel effortless. From the moment we met, something just felt different. I genuinely enjoy getting to know you, hearing your thoughts, and sharing little moments throughout the day. Your laughter always seems to make me smile, and somehow you have become that one person I look forward to talking to more than I would like to admit. These past two weeks have been special, and I am excited to see where our journey takes us.';
     } else if (personName === 'Teena') {
-      message = 'Go ahead, my dear. There\'s something in there that belongs to you.';
+      message = 'My heart to Teena...';
     }
 
     const content = `
