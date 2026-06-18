@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTJourney - Gateway</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="gateway-container">
+    <div class="gateway-card">
+      <p class="gateway-label">Chapter Two · A Personal Message</p>
+      <h1>Before we begin...</h1>
+      <p class="gateway-subtitle">A message from my heart, in my own voice.</p>
+
+      <div class="audio-player">
+        <div class="player-header">
+          <span class="player-title">A Message From My Heart</span>
+        </div>
+
+        <div class="player-wrap">
+          <audio id="gateway-audio" preload="auto">
+            <source src="public/voice-note.ogg" type="audio/ogg">
+            <source src="public/voice-note.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+
+          <button id="gateway-play-btn" class="play-btn" aria-pressed="false" aria-label="Play audio">
+            <span class="play-icon">▶</span>
+            <span class="play-label">Play</span>
+          </button>
+          
+          <div class="progress-container" aria-hidden="false">
+            <div class="progress-bar" id="gateway-progress">
+              <div class="progress-fill" id="gateway-progress-fill"></div>
+            </div>
+            <div class="time-row">
+              <span id="gateway-current">0:00</span>
+              <span id="gateway-duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="controls-row" style="margin-top:0.6rem;">
+            <div class="volume-label">Volume</div>
+            <input id="gateway-volume" class="volume-slider" type="range" min="0" max="100" value="55" aria-label="Volume">
+          </div>
+        </div>
+
+        <!-- caption removed per design -->
+      </div>
+
+      <a href="story.html" id="enter-story-btn" class="btn-enter-story">Enter Our Story ❤️</a>
+    </div>
+  </div>
+      <script>
+        (function() {
+          const audio = document.getElementById('gateway-audio');
+          const btn = document.getElementById('gateway-play-btn');
+          const progress = document.getElementById('gateway-progress');
+          const fill = document.getElementById('gateway-progress-fill');
+          const currentEl = document.getElementById('gateway-current');
+          const durationEl = document.getElementById('gateway-duration');
+          const volume = document.getElementById('gateway-volume');
+
+          if (!audio || !btn) return;
+
+          // Medium default volume
+          audio.volume = 0.55;
+          if (volume) volume.value = Math.round(audio.volume * 100);
+
+          function formatTime(secs) {
+            if (isNaN(secs)) return '0:00';
+            const m = Math.floor(secs / 60);
+            const s = Math.floor(secs % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+          }
+
+          // Update progress bar and time
+          function updateProgress() {
+            if (!audio.duration) return;
+            const pct = (audio.currentTime / audio.duration) * 100;
+            fill.style.width = pct + '%';
+            currentEl.textContent = formatTime(audio.currentTime);
+          }
+
+          audio.addEventListener('timeupdate', updateProgress);
+
+          audio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audio.duration);
+          });
+
+          // Seek on progress bar click
+          progress.addEventListener('click', (e) => {
+            const rect = progress.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const pct = Math.max(0, Math.min(1, x / rect.width));
+            if (audio.duration) audio.currentTime = pct * audio.duration;
+            updateProgress();
+          });
+
+          // Play/pause toggle
+          btn.addEventListener('click', async () => {
+            try {
+              if (audio.paused) {
+                await audio.play();
+                btn.classList.add('playing');
+                btn.setAttribute('aria-pressed', 'true');
+                btn.querySelector('.play-label').textContent = 'Pause';
+              } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                btn.setAttribute('aria-pressed', 'false');
+                btn.querySelector('.play-label').textContent = 'Play';
+              }
+            } catch (err) {
+              console.error('Playback failed:', err);
+            }
+          });
+
+          audio.addEventListener('ended', () => {
+            btn.classList.remove('playing');
+            btn.setAttribute('aria-pressed', 'false');
+            btn.querySelector('.play-label').textContent = 'Play';
+            fill.style.width = '0%';
+            currentEl.textContent = formatTime(0);
+          });
+
+          // Volume slider
+          if (volume) {
+            volume.addEventListener('input', (e) => {
+              const v = parseInt(e.target.value, 10) / 100;
+              audio.volume = v;
+            });
+          }
+        })();
+      </script>
+        <script>
+          // When user clicks Enter Our Story, mark to trigger celebration on next page
+          (function(){
+            const enterBtn = document.getElementById('enter-story-btn');
+            if (!enterBtn) return;
+            enterBtn.addEventListener('click', (e) => {
+              // set flag so story page shows celebration immediately and hides content
+              try { sessionStorage.setItem('celebrateOnLoad', 'true'); } catch (err) {}
+              // allow link navigation to proceed
+            });
+          })();
+        </script>
+    </body>
+    </html>

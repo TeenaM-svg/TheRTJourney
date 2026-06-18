@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTJourney - Chapter 1: Discovery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="overflow-x: hidden;">
+
+  <!-- Page Transition Overlay -->
+  <div id="transition-overlay" class="transition-overlay"></div>
+
+  <!-- Interactive Notes Popup Modal (Scroll note) -->
+  <div id="jar-scroll-note" class="jar-scroll-note">
+    <h4 id="note-title">A Sweet Secret</h4>
+    <p id="note-text">Note details...</p>
+    <button id="note-close-btn">Close</button>
+  </div>
+
+  <!-- Hidden Hearts Spaced out across the screen -->
+  <div id="heart-2" class="hidden-heart" style="top: 12%; left: 8%; font-size: 1.25rem;" title="Found me! 💖">❤️</div>
+  <div id="heart-4" class="hidden-heart" style="top: 35%; right: 12%; font-size: 1.5rem;" title="Found me! 💖">❤️</div>
+  <div id="heart-5" class="hidden-heart" style="bottom: 25%; left: 15%; font-size: 1.35rem;" title="Found me! 💖">❤️</div>
+  <div id="heart-7" class="hidden-heart" style="bottom: 15%; right: 10%; font-size: 1.25rem;" title="Found me! 💖">❤️</div>
+
+  <!-- Navigation Header (Simple styled header for landing) -->
+  <header class="sticky-nav" style="background: transparent; border: none; height: 6rem;">
+    <div class="nav-content max-w-6xl" style="padding-top: 1rem; justify-content: center;">
+      <div class="nav-title-group" style="text-align: center;">
+        <h1 style="color: var(--primary); text-shadow: none; font-size: 2rem;">RTJourney</h1>
+        <p style="color: var(--muted-foreground); text-shadow: none;">Chapter 1: Discovery</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spawner Container for floating envelopes -->
+  <div id="envelope-spawner" style="position: absolute; inset: 0; pointer-events: none; z-index: 1;"></div>
+
+  <main class="welcome-container max-w-6xl">
+    <!-- Welcome info card -->
+    <div class="welcome-title-group">
+      <h2>A Little Adventure</h2>
+      <p style="margin-bottom: 0.5rem;">Before the story begins... <span id="heart-1" class="hidden-heart" style="position: relative; display: inline-block; animation: none; font-size: 1.1rem; cursor: pointer; vertical-align: middle;" title="Found me! 💖">❤️</span></p>
+      <p style="font-size: 0.8rem; max-width: 440px; margin: 0 auto; line-height: 1.4;">
+        Find the <strong>7 hidden hearts</strong> throughout this page to unlock a special reward, or explore the interactive <strong>Memory Jar</strong> and <strong>Floating Envelopes</strong> to reveal sweet memories.
+      </p>
+    </div>
+
+    <!-- Progress Tracker Panel -->
+    <div class="progress-bar-container">
+      <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      <span id="progress-text">Hearts Found: 0/7</span>
+    </div>
+
+    <!-- Interactive Memory Jar -->
+    <div class="memory-jar-container" id="memory-jar-trigger" title="Click me for a sweet memory! 🍯">
+      <!-- Hidden heart 3 placed behind jar collar -->
+      <div id="heart-3" class="hidden-heart" style="top: -15px; left: 15px; font-size: 0.95rem; z-index: 6; animation-delay: 0.5s;" title="Found me! 💖">❤️</div>
+      <div class="jar-lid"></div>
+      <div class="jar-tag">MEMORIES</div>
+      <div class="memory-jar">
+        <div class="jar-heart" style="left: 15%; bottom: 15%; animation-delay: 0.2s;">❤️</div>
+        <div class="jar-heart" style="left: 55%; bottom: 25%; animation-delay: 0.8s;">💙</div>
+        <div class="jar-heart" style="left: 75%; bottom: 12%; animation-delay: 1.4s;">💖</div>
+        <div class="jar-heart" style="left: 35%; bottom: 48%; animation-delay: 1.9s;">❤️</div>
+      </div>
+    </div>
+
+    <!-- Unlocked Gate Reward Card (hidden by default) -->
+    <div id="unlock-reward" class="love-banner" style="display: none; margin-top: 0.5rem; z-index: 10; width: 100%; max-width: 440px;">
+      <div class="love-banner-card glow-hover" style="border: 2px solid var(--primary); background: #fffdf9; padding: 1.25rem;">
+        <p class="quote text-gradient" style="font-size: 1.15rem; margin-bottom: 0.25rem;">🎉 Discovery Complete! 🔑</p>
+        <p class="desc" style="font-size: 0.75rem; color: var(--muted-foreground); margin-bottom: 0.5rem; font-style: normal; line-height: 1.4;">
+          You've discovered all 7 hearts! You've unlocked the keys to my heart. Let's move to the next chapter.
+        </p>
+      </div>
+    </div>
+
+    <!-- Continue Buttons -->
+    <div style="z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 320px;">
+      <a href="gateway.html" id="btn-continue-journey" class="btn-enter-story" style="text-decoration: none; display: block; text-align: center;">
+        Continue Our Journey →
+      </a>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 2rem 0; font-size: 0.75rem; color: var(--muted-foreground); position: relative; z-index: 10;">
+    <p>© 2026 RTJourney. Made with <span id="heart-6" class="hidden-heart" style="position: relative; display: inline-block; animation: none; font-size: 0.95rem; cursor: pointer; vertical-align: middle;" title="Found me! 💖">❤️</span> by Ray & Teena.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

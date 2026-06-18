@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheRTJourney</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="story-page">
+
+  <!-- Page Transition Overlay -->
+  <div id="transition-overlay" class="transition-overlay"></div>
+
+  <!-- Floating Celebrate FAB Button -->
+  <button id="fab-celebrate-trigger" class="fab-celebrate" title="Click to celebrate! 🎈">
+    <span class="balloon">🎈</span>
+    <span>Celebrate</span>
+  </button>
+
+  <!-- Balloon Celebration Overlay Container -->
+  <div id="balloon-celebration-wrapper" class="balloon-wrapper" style="display: none;"></div>
+
+  <!-- Modal Overlay Container -->
+  <div id="modal-overlay" class="modal-overlay" style="display: none;">
+    <div id="modal-box" class="modal-box"></div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="sticky-nav">
+    <div class="nav-bg-wrapper">
+      <img src="public/anniversary.png" alt="Ray & Teena Anniversary Logo" style="width: 100%; align-items: left; justify-content: center;">
+      <div class="nav-overlay"></div>
+      <div class="nav-content max-w-6xl">
+        <div class="nav-title-group">
+          <h1>Ray & Teena</h1>
+        </div>
+        <nav class="nav-links"></nav>
+        <div id="nav-heart-trigger" class="nav-heart heart-pulse" title="Click for celebration! 🎈">❤️</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="journey" class="hero-sec">
+      <div class="hero-bg-1"></div>
+      <div class="hero-bg-2"></div>
+      <div class="max-w-6xl hero-grid">
+        <!-- Text details -->
+        <div class="hero-text-side">
+          <div class="hero-title-group" style="margin-bottom: 1.5rem; padding-top : 0 rem;">
+            <h2>Chapter Three: Our Love <span class="text-gradient">Story</span></h2>
+            <p>Two hearts, one beautiful journey. From June 4th to forever.</p>
+          </div>
+          <div class="hero-cards-stack">
+            <div class="card-accent-border glow-hover">
+              <p class="card-bold">Accra → Kumasi</p>
+              <p class="card-muted">Distance measured in miles. Feelings measured in love.</p>
+            </div>
+            <div id="hero-celebrate-card" class="card-accent-border glow-hover hero-interactive-card" title="Click for celebration! 🎈">
+              <p class="card-bold text-gradient">2 Weeks</p>
+              <p class="card-muted">And counting with ❤️<br> (Click me!)</br></p>
+            </div>
+          </div>
+        </div>
+        <!-- Image display -->
+        <div class="hero-img-side">
+          <div class="hero-img-wrapper glow-hover">
+            <img src="public/couple-journey.jpeg" alt="Ray and Teena" style="width: 100%; height: 100%; object-fit: cover; 
+            ;">
+          </div>
+          <div class="hero-img-border"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="moments" class="timeline-sec">
+      <div class="max-w-6xl">
+        <div class="section-header">
+          <h2>Our Journey in <span class="text-gradient">Moments</span></h2>
+          <p>From June 4th to today - 2 weeks of beautiful memories</p>
+        </div>
+
+        <!-- Desktop Timeline Layout -->
+        <div class="timeline-desktop">
+          <div class="relative">
+            <!-- Row 1: The Beginning -->
+            <div class="timeline-row">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <!-- <div class="icon">✨</div> -->
+                  <span class="day-badge">Day 1</span>
+                  <h3>The Beginning</h3>
+                  <p class="date">June 4</p>
+                  <p class="desc">The night we met was a brief yet memorable experience. 
+                    I walked down the streets late at night after buying some food and just when I got to the junction He said he lived down the street </p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <div class="main-heart-dot heart-pulse">❤️</div>
+                <!-- Connecting line to Row 2: 3 red hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.45s;">❤️</span>
+                  <span style="animation-delay: 0.6s;">❤️</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 2: First Connection -->
+            <div class="timeline-row reverse">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">💭</div>
+                  <span class="day-badge">Day 2</span>
+                  <h3>First Connection</h3>
+                  <p class="date">June 5</p>
+                  <p class="desc">Getting to know each other, laughing and sharing dreams.</p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 red hearts -->
+                <div class="connector-half connector-top">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.15s;">❤️</span>
+                  <span style="animation-delay: 0.3s;">❤️</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">❤️</div>
+                <!-- Bottom-half connecting: 3 transition pink hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>💖</span>
+                  <span style="animation-delay: 0.45s;">💖</span>
+                  <span style="animation-delay: 0.6s;">💖</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 3: Growing Closer -->
+            <div class="timeline-row">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">🌿</div>
+                  <span class="day-badge">Day 4</span>
+                  <h3>Growing Closer</h3>
+                  <p class="date">June 7</p>
+                  <p class="desc">Every moment together feels like home.</p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 transition pink hearts -->
+                <div class="connector-half connector-top">
+                  <span>💖</span>
+                  <span style="animation-delay: 0.15s;">💖</span>
+                  <span style="animation-delay: 0.3s;">💖</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">💙</div>
+                <!-- Bottom-half connecting: 3 blue hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>💙</span>
+                  <span style="animation-delay: 0.45s;">💙</span>
+                  <span style="animation-delay: 0.6s;">💙</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 4: One Week Strong -->
+            <div class="timeline-row reverse">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">⭐</div>
+                  <span class="day-badge">Day 7</span>
+                  <h3>One Week Strong</h3>
+                  <p class="date">June 10</p>
+                  <p class="desc">A week of pure joy, laughter, and unforgettable memories.</p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 blue hearts -->
+                <div class="connector-half connector-top">
+                  <span>💙</span>
+                  <span style="animation-delay: 0.15s;">💙</span>
+                  <span style="animation-delay: 0.3s;">💙</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">💙</div>
+                <!-- Bottom-half connecting: 3 red hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.45s;">❤️</span>
+                  <span style="animation-delay: 0.6s;">❤️</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 5: Distance, No Barrier -->
+            <div class="timeline-row">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">🌍</div>
+                  <span class="day-badge">Day 11</span>
+                  <h3>Distance, No Barrier</h3>
+                  <p class="date">June 14</p>
+                  <p class="desc">Miles apart but hearts forever connected.</p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 red hearts -->
+                <div class="connector-half connector-top">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.15s;">❤️</span>
+                  <span style="animation-delay: 0.3s;">❤️</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">❤️</div>
+                <!-- Bottom-half connecting: 3 red hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.45s;">❤️</span>
+                  <span style="animation-delay: 0.6s;">❤️</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 6: The Question -->
+            <div class="timeline-row reverse">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">💫</div>
+                  <span class="day-badge">Day 13</span>
+                  <h3>The Question</h3>
+                  <p class="date">June 16</p>
+                  <p class="desc">A moment we'll never forget. Will you be my girlfriend?</p>
+                  <button onclick="window.openProposalModal()" class="btn-proposal" style="margin-top: 1rem;">View Proposal</button>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 red hearts -->
+                <div class="connector-half connector-top">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.15s;">❤️</span>
+                  <span style="animation-delay: 0.3s;">❤️</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">❤️</div>
+                <!-- Bottom-half connecting: 3 red hearts -->
+                <div class="connector-half connector-bottom">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.45s;">❤️</span>
+                  <span style="animation-delay: 0.6s;">❤️</span>
+                </div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+
+            <!-- Row 7: Two Weeks of Love -->
+            <div class="timeline-row">
+              <div class="timeline-card-col">
+                <div class="timeline-card glow-hover">
+                  <div class="icon">❤️</div>
+                  <span class="day-badge">Day 15</span>
+                  <h3>Two Weeks of Love</h3>
+                  <p class="date">June 18</p>
+                  <p class="desc">Here we are, stronger than ever. The best is yet to come.</p>
+                </div>
+              </div>
+              <div class="timeline-dot-col">
+                <!-- Top-half connecting: 3 red hearts -->
+                <div class="connector-half connector-top">
+                  <span>❤️</span>
+                  <span style="animation-delay: 0.15s;">❤️</span>
+                  <span style="animation-delay: 0.3s;">❤️</span>
+                </div>
+                <div class="main-heart-dot heart-pulse">❤️</div>
+              </div>
+              <div class="timeline-space-col"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Timeline Layout -->
+        <div class="timeline-mobile">
+          <div class="mobile-tabs">
+            <button class="mobile-tab-btn" data-index="0">Day 1</button>
+            <button class="mobile-tab-btn" data-index="1">Day 2</button>
+            <button class="mobile-tab-btn" data-index="2">Day 4</button>
+            <button class="mobile-tab-btn" data-index="3">Day 7</button>
+            <button class="mobile-tab-btn" data-index="4">Day 11</button>
+            <button class="mobile-tab-btn" data-index="5">Day 13</button>
+            <button class="mobile-tab-btn active" data-index="6">Day 15</button>
+          </div>
+          <div id="mobile-timeline-card" class="timeline-card glow-hover">
+            <div class="icon">❤️</div>
+            <h3 class="font-heading">Two Weeks of Love</h3>
+            <p class="date">June 18</p>
+            <p class="desc">Here we are, stronger than ever. The best is yet to come.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future timeline moved to final 'next.html' to keep this page focused on Chapter 3 -->
+
+    <!-- Testimonials Section -->
+    <section id="about" class="testimonials-sec">
+      <div class="max-w-6xl">
+        <div class="section-header">
+          <h2>What Do I <span class="text-gradient">Think About You?</span></h2>
+          <p>Words from the heart about each other </p>
+        </div>
+
+        <!-- Desktop Testimonials Layout -->
+        <div class="testimonials-grid">
+          <!-- Ray's Testimonial Card -->
+          <div class="testimonial-card bg-ray-gradient glow-hover">
+            <div class="quote-mark">"</div>
+            <div>
+              <div class="testimonial-profile">
+                <img src="public/Ray.jpeg" alt="Ray" class="testimonial-avatar">
+                <h3>Ray</h3>
+                <p class="nick">"Papi"</p>
+                <p class="loc">East Legon, Accra</p>
+              </div>
+              <div class="hidden-quote">
+                "funny, beautiful inside out, thoughtful, and easy to talk to. You are the kind of person who makes every conversation feel effortless. From the moment we met, something just felt different. I genuinely enjoy getting to know you, hearing your thoughts, and sharing little moments throughout the day. Your smile always seems to make things better, and somehow you've become that one person I look forward to talking to more than I'd like to admit. These past two weeks have been special, and I'm excited to see where this journey takes us."
+              </div>
+
+            </div>
+            <button onclick="window.openSecretModal('Ray')" class="btn-secret btn-center">Reveal My Thoughts</button>
+            <div class="decor-heart heart-pulse">❤️</div>
+          </div>
+
+          <!-- Teena's Testimonial Card -->
+          <div class="testimonial-card bg-teena-gradient glow-hover">
+            <div class="quote-mark">"</div>
+            <div>
+              <div class="testimonial-profile">
+                <img src="public/Teena.png" alt="Teena" class="testimonial-avatar">
+                <h3>Teena</h3>
+                <p class="nick">"Baby Tee"</p>
+                <p class="loc">Adutwumwaa Hostel, Kumasi</p>
+              </div>
+              <blockquote>
+                "Peaceful, wise, beautiful soul. A heart that feels everything. You brought sunshine into my life when I needed it most. Every moment with you feels like a blessing, and I thank the universe for you every single day."
+              </blockquote>
+
+            </div>
+            <button onclick="window.openSecretModal('Teena')" class="btn-secret">Reveal My Thoughts</button>
+            <div class="decor-heart heart-pulse">❤️</div>
+          </div>
+        </div>
+
+        <!-- Mobile Testimonials Carousel -->
+        <div class="testimonials-mobile">
+          <!-- Ray Mobile Item -->
+          <div id="testimonial-ray-mobile" class="testimonial-mobile-item testimonial-card bg-ray-gradient glow-hover">
+            <div class="quote-mark">"</div>
+            <div>
+              <div class="testimonial-profile">
+                <div class="emoji">👨</div>
+                <h3>Ray</h3>
+                <p class="nick">"Olu"</p>
+                <p class="loc">East Legon, Accra</p>
+              </div>
+              <blockquote>
+                "funny, beautiful inside out, thoughtful, and easy to talk to. You are the kind of person who makes every conversation feel effortless. From the moment we met, something just felt different. I genuinely enjoy getting to know you, hearing your thoughts, and sharing little moments throughout the day. Your smile always seems to make things better, and somehow you've become that one person I look forward to talking to more than I'd like to admit. These past two weeks have been special, and I'm excited to see where this journey takes us."
+              </blockquote>
+              <div class="traits-group">
+                <span class="trait-tag">Loyal</span>
+                <span class="trait-tag">Funny</span>
+                <span class="trait-tag">Deep</span>
+                <span class="trait-tag">Real</span>
+              </div>
+            </div>
+            <button onclick="window.openSecretModal('Ray')" class="btn-secret">Reveal Secret</button>
+            <div class="decor-heart heart-pulse">❤️</div>
+          </div>
+
+          <!-- Teena Mobile Item (hidden by default) -->
+          <div id="testimonial-teena-mobile" class="testimonial-mobile-item testimonial-card bg-teena-gradient glow-hover" style="display: none;">
+            <div class="quote-mark">"</div>
+            <div>
+              <div class="testimonial-profile">
+                <img src="public/Teena.png" alt="Teena" class="testimonial-avatar">
+                <h3>Teena</h3>
+                <p class="nick">"Baby Tee"</p>
+                <p class="loc">Adutwumwaa Hostel, Kumasi</p>
+              </div>
+              <blockquote>
+                "Peaceful, wise, beautiful soul. A heart that feels everything. You brought sunshine into my life when I needed it most. Every moment with you feels like a blessing, and I thank the universe for you every single day."
+              </blockquote>
+              <div class="traits-group">
+                <span class="trait-tag">Peaceful</span>
+                <span class="trait-tag">Wise</span>
+                <span class="trait-tag">Beautiful</span>
+                <span class="trait-tag">Kind</span>
+              </div>
+            </div>
+            <button onclick="window.openSecretModal('Teena')" class="btn-secret">Reveal Secret</button>
+            <div class="decor-heart heart-pulse">❤️</div>
+          </div>
+
+          <div class="mobile-carousel-indicator">
+            <button class="carousel-dot active" data-index="0" aria-label="View Ray testimonial"></button>
+            <button class="carousel-dot" data-index="1" aria-label="View Teena testimonial"></button>
+          </div>
+        </div>
+
+        <!-- Banner Declaration -->
+        <div class="love-banner">
+          <div class="love-banner-card glow-hover">
+            <p class="quote">I'm not just thinking, <strong>I look forward to you</strong></p>
+            <div class="love-cta" style="margin-top:0.75rem; text-align:center;">
+              <a href="next.html" class="small-cta" aria-label="Go to Our Next Chapters">Click me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA moved to bottom of document -->
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="max-w-6xl">
+      <div class="footer-bottom">
+        <p>© 2026 RTJourney. Created with love by Ray & Teena.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chapter 5: Fading Love Letter Overlay -->
+  <div id="dark-love-letter-overlay" class="dark-love-letter-overlay">
+    <div class="love-letter-content">
+      <p class="love-letter-text" data-index="0">We met.</p>
+      <p class="love-letter-text" data-index="1">We talked.</p>
+      <p class="love-letter-text" data-index="2">We laughed.</p>
+      <p class="love-letter-text" data-index="3">We connected.</p>
+      <p class="love-letter-text" data-index="4">And somehow...</p>
+      <p class="love-letter-text" data-index="5">You became my favorite part of every day.</p>
+      <p class="love-letter-text emphasis" data-index="6">Thank you for choosing me. ❤️</p>
+      <button id="btn-letter-close" class="btn-letter-close">Replay Story 🔄</button>
+    </div>
+  </div>
+  <!-- Removed large CTA; navigation now via small 'Click me' under the love banner -->
+
+  <script src="story.js"></script>
+</body>
+</html>
