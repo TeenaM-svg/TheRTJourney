@@ -376,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       mobileCard.innerHTML = `
-        <div class="icon">${event.icon}</div>
         <h3 class="font-heading">${event.title}</h3>
         <p class="date">${event.date}</p>
         <p class="desc">${event.description}</p>
