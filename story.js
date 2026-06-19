@@ -311,42 +311,42 @@ document.addEventListener('DOMContentLoaded', () => {
       day: 1,
       title: 'The Beginning. "Hi, I\'m Ray!🤩"',
       description: 'I walked down the streets late on that Thursday night after buying some food. Just when I almost got to the next junction, I see a car pull and park right in front of me. "Hi, My name is Ray", he said. (Hell yeah you are! All here infecting me with rays of energy). The energy and vibe was undeniable and he sure did leave the impression. He said he lived down the street and his mum and I shared the same name, Ernestina. 😄',
-     
+      icon: '✨',
     },
     {
       date: 'June 6',
       day: 2,
       title: 'First Connection. "I\'ll miss you" 🌚',
       description: 'It was one heck of a night at the dinner party I had attended in the hotel. I was tired and sleepy and everything else in-between. It was either I snuck out into a vehicle I had no idea who was driving or I waited till the end of the program. When I casually told, you know who, he went like "I can come pick you up, if you want". A great offer it turned out to be. We drove around, listened to some great music and we talked about everything and anything. I basically saw Accra through his lenses\'. When it was time to leave, he said "I\'ll miss you". (well yeah, you better 🌚😄) We hugged twice and that felt like the start of something special.',
-    
+      icon: '💭',
     },
     {
       date: 'June 7',
       day: 4,
       title: 'Growing Closer. Raybae & Baby Tee, 🎺🎺🎺',
       description: 'My name is boring "Ray" on your phone right? That cracked me up! We found our own cute names and favorite emoji... "hornful"😂 Something only we understand!',
-     
+      icon: '🌿',
     },
     {
       date: 'June 10',
       day: 7,
       title: 'One Week Strong. "Happy One-Week Anniversary, baby!🥹"',
       description: 'We talked about Sade, business interviews, strip clubs vs clubs 😂... A mix of everything, really, because we enjoy each other\'s company. "Happy One-Week Anniversary, baby!", he remembered and that sure made me smile.',
-    
+      icon: '⭐',
     },
     {
       date: 'June 14',
       day: 11,
       title: 'Breaking The Barriers of Distance 🔥',
       description: 'Even through down moments, health challenges, we remained connected.',
-    
+      icon: '🌍',
     },
     {
       date: 'June 16',
       day: 13,
       title: 'The Question',
       description: 'A moment we\'ll never forget.',
-    
+      icon: '💫',
       hasProposal: true,
     },
     {
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
       day: 15,
       title: 'Two Weeks of Love. "Happy RayTee Anniversary" ❤️🎊',
       description: 'After over 500 WhatsApp messages, 24 total phone calls, at exactly 2 weeks, here we are, stronger than ever! The best is yet to come.',
-    
+      icon: '❤️',
     }
   ];
 
