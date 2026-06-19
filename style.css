@@ -266,18 +266,12 @@ header.sticky-nav .nav-heart:hover {
 }
 
 .hero-title-group h2 {
-  font-size: 1.85rem;
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 0.75rem;
-  white-space: nowrap;
-  overflow-wrap: normal;
-}
-
-@media (min-width: 768px) {
-  .hero-title-group h2 {
-    font-size: 2.2rem;
-  }
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .hero-title-group p {
@@ -288,13 +282,15 @@ header.sticky-nav .nav-heart:hover {
 .hero-cards-stack {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
   border-radius: 9999px;
   padding: 0.6rem;
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
   height: auto;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
